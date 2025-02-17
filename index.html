@@ -1,0 +1,107 @@
+<!-- MIT License
+
+Copyright (c) 2023 Looker Data Sciences, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags and Title -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Navigation</title>
+
+    <!-- Include external scripts -->
+    <script src="./js/script.js"></script>
+
+    <!-- Link to external stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <!-- Page Navigation Buttons -->
+    <div class="page-navigation-box">
+      <button data-page="index" class="active">⌂</button>
+      <button data-page="setup">Setup</button>
+      <button data-page="embed">Embed</button>
+      <button data-page="demo">Demo</button>
+    </div>
+
+    <!-- Hardcoded Text Section -->
+    <div class="description-section">
+      <h2>About</h2>
+      <h3>Welcome to the Looker SSO Embed Demo Builder!</h3>
+      <de>
+        This tool allows you to quickly create and customize visually appealing
+        Looker SSO embed demos with ease. Whether you're building an interactive
+        demo or testing embedding content, this tool helps you streamline the
+        process. Simply follow the navigation bottom right through the setup
+        pages and finally have a look at your custom demo.
+      </de>
+      <h3>Instructions:</h3>
+      <in>
+        <strong>1) Setup:</strong><br />
+        Use the three sections within this page to customize the general layout,
+        buttons & sub-pages of your demo page. Make sure to save your
+        configuration!<br /><br />
+        <strong>2) Embed:</strong><br />
+        Define all inputs necessary to create a valid SSO URL. Make sure to save
+        your configuration in order to run a background script processing an
+        embed-URL & displaying it within the iframe on the demo page.<br />
+        <strong>Remember:</strong>
+        Add a theme to your embed path to make your demo visually even
+          more appealing!</em
+        ><br /><br />
+        <strong>3) Demo:</strong><br />
+        Use this page to test your setup or to demo embed capabilities of
+        looker.<br />
+        <strong>Remember:</strong> 
+        SOO URLs are only valid once. Navigating back
+        and forth from the demo page will invalidate the URL. You need to re-save
+        the configuration on the embed page to establish a new SSO URL.
+      </in>
+
+      <div class="profile">
+        <img src="./images/hackelm.jpg" alt="Michael H." class="profile-pic" />
+        <div class="profile-info">
+          <strong>Michael Hackel</strong><br />
+          Data / BI / AI Solutions Architect<br />
+          <a href="https://github.com/hackelmi/looker-embed-demo">github.com/hackelmi/looker-embed-demo</a>
+        </div>
+      </div>
+      <wa>
+        Usage Warranty Clause: This webpage is provided "as is" without any
+        warranties, express or implied. The owner makes no guarantees regarding
+        accuracy, reliability, or functionality. Use of this page is at the
+        user’s own risk, and the owner is not liable for any direct, indirect,
+        incidental, or consequential damages arising from its use. The owner is
+        not responsible for third-party interactions, browser compatibility
+        issues, or software conflicts. This page may be modified, updated, or
+        discontinued without notice. Access is not guaranteed. Any disputes
+        shall be governed by applicable local laws.
+      </wa>
+    </div>
+  </body>
+</html>

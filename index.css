@@ -1,0 +1,140 @@
+/* MIT License
+
+Copyright (c) 2023 Looker Data Sciences, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+/* General Body Styling */
+body {
+  font-family: 'Product Sans', sans-serif !important;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Description Section */
+.description-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  box-sizing: border-box;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Description Section Headings */
+.description-section h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.description-section h3 {
+  font-size: 1.3em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Description Section Text */
+.description-section de {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.description-section in {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-left: 5px;
+}
+
+.description-section wa {
+  font-size: 0.8em;
+  color: #555;
+  line-height: 1.3;
+  margin-left: 5px;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  margin-top: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* Page Navigation Box */
+.page-navigation-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+/* Navigation Buttons */
+.page-navigation-box button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+/* First Navigation Button */
+.page-navigation-box button:first-child {
+  font-size: 1.3em;
+}
+
+/* Hover State for Navigation Buttons */
+.page-navigation-box button:hover {
+  background-color: #555;
+}
+
+/* Active State for Navigation Buttons */
+.page-navigation-box button.active {
+  background-color: #7e2efdff;
+  color: #fff;
+}

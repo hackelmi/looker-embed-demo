@@ -1,0 +1,376 @@
+/* MIT License
+
+Copyright (c) 2023 Looker Data Sciences, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+/* Root Variables */
+:root {
+  --primary-color: #000;
+  --secondary-color: #f0f0f0;
+  --tertiary-color: #ddd;
+  --logo-color: #000;
+}
+
+/* General Styling */
+body {
+  font-family: 'Product Sans', sans-serif !important;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Page Navigation Box */
+.page-navigation-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+
+.page-navigation-box button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.page-navigation-box button:first-child {
+  font-size: 1.3em;
+}
+
+.page-navigation-box button:hover {
+  background-color: #555;
+}
+
+.page-navigation-box button.active {
+  background-color: #7e2efdff;
+  color: #fff;
+}
+
+/* Demo Page Layout */
+.containerDemo {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.containerSetup {
+  display: flex;
+  flex: 1;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Sidebar Navigation */
+.navigation {
+  width: 280px;
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: calc(100vh - 80px);
+  color: var(--secondary-color);
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+.navigation img {
+  height: auto;
+  max-height: 70px;
+  width: auto;
+  max-width: 240px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sub-Page Buttons */
+.sub-page-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 80px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: var(--secondary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sub-page-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.sub-page-icon {
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 30px, 30px, 0px, 30px;
+  padding-left: 340px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--secondary-color);
+  overflow-y: auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+
+/* Iframe Content */
+iframe {
+  flex: 1;
+  margin-top: 0px;
+  margin-left: 20px;
+  width: 99%;
+  height: calc(100vh - 130px);
+}
+
+/* Action Buttons */
+.actions {
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.actions button,
+.contact-box button {
+  margin-right: 20px;
+  padding: 10px 18px;
+  background-color: var(--logo-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 80px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.actions button:hover,
+.contact-box button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.actions input[type='search'] {
+  margin-left: -10px;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 8px;
+  outline: none;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+}
+
+/* Demo Button */
+#buttonDemo {
+  margin-right: 20px;
+  padding: 10px 18px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 40px;
+  width: auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#buttonDemo:hover {
+  background-color: var(--logo-color);
+}
+
+/* Search Bar */
+.search-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.search-input {
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  text-indent: 24px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: grey;
+}
+
+/* Notification Badge */
+.notification {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--tertiary-color);
+  border-radius: 70%;
+}
+
+.notification .bell-icon {
+  width: 80px;
+  height: 24px;
+  color: var(--primary-color);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 10px;
+}
+
+/* Contact Box */
+.contact-box {
+  position: center;
+  bottom: 20px;
+  left: 20px;
+  margin-top: auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+.contact-box p {
+  margin-bottom: 15px;
+}
+
+/* Setup Form */
+.containerSetup {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+  width: 100%;
+  padding: 20px;
+}
+
+#setup-form {
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-section {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2,
+.form-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  #setup-form {
+    grid-template-columns: 1fr;
+  }
+
+  .pages .sub-page-group input {
+    width: 100%;
+  }
+
+  .page-navigation-box {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,269 @@
+/* MIT License
+
+Copyright (c) 2023 Looker Data Sciences, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+/* General Styling */
+body {
+  font-family: 'Product Sans', sans-serif !important;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Page Navigation Box */
+.page-navigation-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 18px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  z-index: 100;
+}
+
+.page-navigation-box button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.page-navigation-box button:first-child {
+  font-size: 1.3em;
+}
+
+.page-navigation-box button:hover {
+  background-color: #555;
+}
+
+.page-navigation-box button.active {
+  background-color: #7e2efdff;
+  color: #fff;
+}
+
+/* Embed Form Container */
+.containerSetup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+/* Build Form */
+#build-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#json-editor {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* Built URL Display */
+#url-display {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#url-display textarea {
+  width: 97%;
+  height: calc(100vh - 140px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Button Styling */
+#build-form .button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: auto;
+}
+
+#build-form .button:hover {
+  background-color: #555;
+}
+
+/* Submit Button Styling */
+#build-form .buttonSubmit {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 250px;
+  align-self: start;
+}
+
+#build-form .buttonSubmit:hover {
+  background-color: #555;
+}
+
+/* Input Fields Styling */
+textarea {
+  font-size: 10pt !important;
+}
+
+#json-editor input + p,
+#json-editor textarea + p,
+#json-editor select + p {
+  display: none;
+}
+
+#json-editor input:focus + p,
+#json-editor textarea:focus + p,
+#json-editor select:focus + p {
+  display: block;
+}
+
+/* Input Styling */
+#json-editor input[type='text'],
+#json-editor input[type='color'],
+#json-editor select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#json-editor input[type='text']:focus,
+#json-editor input[type='color']:focus,
+#json-editor select:focus {
+  border-color: #7e2efdff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(126, 46, 253, 0.2);
+}
+
+#json-editor input[type='color'] {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid #ccc;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+/* Multi-selection Fields */
+#json-editor select {
+  width: 100%;
+  height: 180px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#json-editor select[name='root[user_timezone]'],
+#json-editor select[name='root[force_logout_login]'] {
+  width: 100%;
+  height: 35px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  overflow-y: auto;
+}
+
+#json-editor select:focus {
+  border-color: #7e2efdff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(126, 46, 253, 0.2);
+}
+
+/* Delete Button Styling */
+.json-editor-btn-delete {
+  height: 35px;
+  font-size: 2px;
+  visibility: hidden;
+}
+
+button.json-editor-btn-delete[data-i='0']::before {
+  content: 'delete';
+}
+
+.json-editor-btn-delete[data-i='0'] {
+  height: 35px;
+  font-size: 2px;
+  visibility: visible;
+}
+
+button.json-editor-btn-movedown {
+  visibility: hidden;
+}
+
+button.json-editor-btn-moveup {
+  visibility: hidden;
+}

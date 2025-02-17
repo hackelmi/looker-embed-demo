@@ -1,0 +1,135 @@
+<!-- MIT License
+
+Copyright (c) 2023 Looker Data Sciences, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags and Title -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/2.2.0/sha1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Include external scripts -->
+    <script src="./js/script.js"></script>
+
+    <!-- Link to external stylesheets -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" href="./css/demo.css" />
+  </head>
+
+  <body>
+    <!-- Page Navigation -->
+    <div class="page-navigation-box">
+      <button data-page="index">⌂</button>
+      <button data-page="setup">Setup</button>
+      <button data-page="embed">Embed</button>
+      <button data-page="demo" class="active">Demo</button>
+    </div>
+
+    <div class="containerDemo">
+      <!-- Sidebar Navigation -->
+      <aside class="navigation" id="sidebar">
+        <img id="logo" src="./images/logo.png" alt="Logo" />
+        <ul id="sub-pages"></ul>
+        <div class="contact-box">
+          <p>Have any problems with managing your app? Contact User Support!</p>
+          <button>Contact Us</button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main>
+        <!-- Header Section -->
+        <header>
+          <div class="user-info">
+            <h2>
+              <span style="font-size: 16px; font-weight: normal"
+                >Welcome Back,</span
+              >
+              <br /><span style="font-size: 32px; font-weight: bold"
+                >Michael Hackel</span
+              >
+            </h2>
+          </div>
+          <div class="actions">
+            <button id="buttonDemo">Button 1</button>
+
+            <!-- Search Box -->
+            <div class="search-wrapper">
+              <input type="search" placeholder="Search" class="search-input" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="search-icon"
+              >
+                <path
+                  d="M11 2a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9zm0 16a7 7 0 1 1 7-7 7.01 7.01 0 0 1-7 7zm8 3l-5.3-5.3"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+
+            <!-- Notification Icon -->
+            <div class="notification">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                class="bell-icon"
+              >
+                <path
+                  d="M12 22c1.104 0 2-.896 2-2H10c0 1.104.896 2 2 2zm6-6v-5c0-3.314-2.686-6-6-6s-6 2.686-6 6v5l-1.5 1.5h15l-1.5-1.5z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+              <div class="notification-badge">2</div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Embedded Content -->
+        <div class="content">
+          <iframe
+            id="embedIframe"
+            src=""
+            frameborder="0"
+            sandbox="allow-scripts allow-same-origin"
+          ></iframe>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
