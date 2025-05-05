@@ -1013,11 +1013,6 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#url-textarea').val(savedUrl);
   }
 
-  // Listen for changes in the JSON editor and save the changes to localStorage
-  editor.on('change', function () {
-    localStorage.setItem('json-val', JSON.stringify(editor.getValue()));
-  });
-
   // Event listener for hash change in URL (reload editor with new data)
   window.addEventListener(
     'hashchange',
@@ -1103,10 +1098,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Display content
     $('#url-textarea').val(url);
+
+    // Save embed setup in localStorage
     localStorage.setItem('embed-url', url);
+    localStorage.setItem('json-val', JSON.stringify(editor.getValue()));
 
     // Notify user that URL have been saved
-    alert('Embed onfiguration saved!');
+    alert('Embed configuration saved!');
   });
 
   // --> FUNCTIONS
@@ -1221,9 +1219,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // DEMO PAGE
 //
 document.addEventListener('DOMContentLoaded', () => {
+  // Update iframe
   const iframe = document.getElementById('embedIframe');
   const embedUrl = localStorage.getItem('embed-url');
   if (embedUrl && iframe) iframe.src = embedUrl;
+
+  // Update header
+  const jsonStr = localStorage.getItem('json-val');
+  if (jsonStr) {
+    const data = JSON.parse(jsonStr);
+    const userFullName = document.getElementById('user-fullname');
+
+    if (userFullName && data.first_name && data.last_name) {
+      userFullName.textContent = `${data.first_name} ${data.last_name}`;
+    } else {
+      userFullName.textContent = 'Michael H.';
+    }
+  }
 
   const setupSettings = JSON.parse(localStorage.getItem('setupSettings'));
   if (setupSettings) {
@@ -1280,19 +1292,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonDemo = document.getElementById('buttonDemo');
     if (buttonDemo && setupSettings.buttonDemo)
       buttonDemo.textContent = setupSettings.buttonDemo;
-
-    // Update header
-    const jsonStr = localStorage.getItem('json-val');
-    if (jsonStr) {
-      const data = JSON.parse(jsonStr);
-      const userFullName = document.getElementById('user-fullname');
-
-      if (userFullName && data.first_name && data.last_name) {
-        userFullName.textContent = `${data.first_name} ${data.last_name}`;
-      } else {
-        userFullName.textContent = 'Michael H.';
-      }
-    }
   }
 
   // Page Navigation
