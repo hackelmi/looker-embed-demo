@@ -1280,6 +1280,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonDemo = document.getElementById('buttonDemo');
     if (buttonDemo && setupSettings.buttonDemo)
       buttonDemo.textContent = setupSettings.buttonDemo;
+
+    // Update header
+    const jsonStr = localStorage.getItem('json-val');
+    if (jsonStr) {
+      const data = JSON.parse(jsonStr);
+      const userFullName = document.getElementById('user-fullname');
+
+      if (userFullName && data.first_name && data.last_name) {
+        userFullName.textContent = `${data.first_name} ${data.last_name}`;
+      } else {
+        userFullName.textContent = 'Michael H.';
+      }
+    }
   }
 
   // Page Navigation
